@@ -2,6 +2,9 @@
 # Ignore bundler config.
 api/.bundle
 
+# Ignore docker compose override
+docker-compose.override.yml
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

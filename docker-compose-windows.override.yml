@@ -1,0 +1,8 @@
+services:
+  api:
+    # For WSL user, the container will be ran as user (1000)
+    user: "1000:1000"
+    build:
+      args:
+        - USER_ID=1000
+        - USER_NAME=appuser

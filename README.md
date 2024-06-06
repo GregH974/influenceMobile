@@ -25,4 +25,19 @@ Things you may want to cover:
  ## sources
  Docker
  https://medium.com/@chris.lty07/dockerize-an-existing-react-rails-and-postgres-application-bba3d9d6b24c# influenceMobile
+
 # influenceMobile
+
+For windows user with WSL
+
+```bash
+cp docker-compose-windows.override.yml docker-compose.override.yml
+```
+
+API
+
+http://localhost:3000/
+
+Client
+
+http://localhost:3000/
