@@ -1,31 +1,18 @@
 # Base image
 FROM ruby:3.2.1
 
-ARG USER_ID=0
-ARG USER_NAME=root
-
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client nano
 
-RUN if ! id -u $USER_NAME; then adduser -u $USER_ID $USER_NAME --force-badname; fi
-
-ENV APP_HOME /api
-RUN mkdir $APP_HOME && chown -R $USER_NAME:$USER_NAME $APP_HOME
-WORKDIR $APP_HOME
-
-ADD Gemfile* $APP_HOME/
-RUN chown -R $USER_NAME:$USER_NAME $APP_HOME
-
-# The commands below will be ran as the app user
-USER $USER_NAME
-
+WORKDIR /api
 COPY . .
 COPY Gemfile /api/Gemfile
 COPY Gemfile.lock /api/Gemfile.lock
 RUN bundle install
 
 # Add a script to be executed every time the container starts.
-COPY --chmod=0755 entrypoint.sh /usr/bin/
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
