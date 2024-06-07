@@ -6,6 +6,8 @@ services:
     environment:
       POSTGRES_PASSWORD: password
     working_dir: /api
+    ports:
+      - "5432:5432"
   api:
     build: api
     image: rails-api

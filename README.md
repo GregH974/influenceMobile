@@ -26,6 +26,8 @@ Things you may want to cover:
  Docker
  https://medium.com/@chris.lty07/dockerize-an-existing-react-rails-and-postgres-application-bba3d9d6b24c# influenceMobile
 
+ https://sdrmike.medium.com/rails-7-api-only-app-with-devise-and-jwt-for-authentication-1397211fb97c
+
 # influenceMobile
 
 For windows user with WSL

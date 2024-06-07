@@ -5,7 +5,7 @@ ARG USER_ID=0
 ARG USER_NAME=root
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client nano
 
 RUN if ! id -u $USER_NAME; then adduser -u $USER_ID $USER_NAME --force-badname; fi
 
