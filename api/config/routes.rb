@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
+  get "users/current_user", to: "users/current_user#index"
+
   namespace :api do
     namespace :v1 do
       resources :books

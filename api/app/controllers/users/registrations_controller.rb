@@ -6,13 +6,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def respond_with(resource, _opts = {})
+  puts "================ respond with in registrations"
     if request.method == "DELETE"
       # current_user is destroyed successfully
       render status: :ok
     elsif request.method == "POST" && resource.persisted?
       # current_user is created successfully
       render json: {
-        user: resource
+        # user: current_user
+        status: {code: 200, message: "Singed up successfully",
+      data: current_user.as_json(except: :jti)}
+        # user: current_user.as_json(except: :jti)
       }, status: :ok
     else
       # current_user is not created successfully
