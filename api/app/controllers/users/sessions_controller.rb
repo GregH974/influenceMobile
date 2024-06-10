@@ -45,11 +45,6 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def respond_with(resource, _opts = {})
-  puts "========== session respond_with"
-  puts resource.inspect
-  puts sign_in_params.inspect
-  puts current_user.inspect
-
     if resource
       # current_user is logged in successfully
       render json: {

@@ -7,11 +7,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: Devise::JWT::RevocationStrategies::JTIMatcher
 
-  # def jwt_payload
-  #   super
-  # end
-
-  # def on_jwt_dispatch(token, payload)
-  #   # do_something(token, payload)
-  # end
 end

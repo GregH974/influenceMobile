@@ -318,15 +318,5 @@ Devise.setup do |config|
 
   config.jwt do |jwt|
     jwt.secret = Rails.application.credentials.devise_jwt_secret_key!
-
-    # jwt.dispatch_requests = [
-    #   ['POST', %r{^/users/sign_in}]
-    # ]
-
-    # jwt.dispatch_requests = [
-    #   ['DELETE', %r{^/users/sign_out}]
-    # ]
-
-    # jwt.expoiration_time = 120.minutes.to_i
   end
 end

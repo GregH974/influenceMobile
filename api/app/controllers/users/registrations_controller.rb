@@ -6,7 +6,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def respond_with(resource, _opts = {})
-  puts "================ respond with in registrations"
     if request.method == "DELETE"
       # current_user is destroyed successfully
       render status: :ok
