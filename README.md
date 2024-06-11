@@ -36,7 +36,7 @@ cp docker-compose-windows.override.yml docker-compose.override.yml
 
 API
 
-http://localhost:3000/
+http://localhost:3002/
 
 Client
 
