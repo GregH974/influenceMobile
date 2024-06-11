@@ -6,14 +6,16 @@ import React from 'react';
 /**
  * AuthWrapper et BrowserRouter test de login
  */
-// import { AuthWrapper } from './auth/AuthWrapper';
-// import { BrowserRouter } from 'react-router-dom';
-// import PrivateRoute from'./components/routing/PrivateRoute'
+import { AuthWrapper } from './auth/AuthWrapper';
+import { BrowserRouter } from 'react-router-dom';
+import PrivateRoute from'./components/routing/PrivateRoute'
 // import axios from 'axios'; // MyButton
 
 // import Login from './components/auth/Login';
 
-import Login from './Login';// <Login />
+// 2 - login
+// import Login from './Login';// <Login />
+
 // function MyButton() {
 //   function handleClick() {
 //     let data = JSON.stringify({
@@ -56,11 +58,11 @@ function App() {
     <main className="App">
       <header className="App-header">
         {/* <MyButton /> */}
-        <Login />
+        {/* <Login /> */}
 
-        {/* <BrowserRouter>
+        <BrowserRouter>
           <AuthWrapper />
-        </BrowserRouter> */}
+        </BrowserRouter>
 
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Assesment</h1>
