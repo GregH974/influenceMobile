@@ -1,10 +1,23 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    sessions: "users/sessions",
-    registrations: "users/registrations"
-  }
+  # devise_for :users, controllers: {
+  #   sessions: "users/sessions",
+  #   registrations: "users/registrations"
+  # }
 
-  get "users/current_user", to: "users/current_user#index"
+  # get "users/current_user", to: "users/current_user#index"
+
+  devise_for :users,
+    defaults: { format: :json },
+    path: '',
+    path_names: {
+      sign_in: 'login',
+      sign_out: 'logout',
+      registration: 'signup'
+    },
+    controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
+    }
 
   namespace :api do
     namespace :v1 do

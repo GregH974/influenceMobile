@@ -4,10 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../api/axios';
 import { Link } from "react-router-dom";
 
-// const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const USER_REGEX = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = '/users/';
+const REGISTER_URL = '/signup/';
 
 const Register = () => {
     const userRef = useRef();
@@ -58,13 +57,10 @@ const Register = () => {
             const response = await axios.post(REGISTER_URL,
                 JSON.stringify({ user:{ email: user, password: pwd }}),
                 {
-                    headers: { 'Content-Type': 'application/json' },
-                    // withCredentials: true
+                    headers: { 'Content-Type': 'application/json' }
                 }
             );
-            // TODO: remove console.logs before deployment
-            console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response))
+
             setSuccess(true);
             //clear state and controlled inputs
             setUser('');
@@ -88,7 +84,7 @@ const Register = () => {
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                        <a href="/login">Sign In</a>
                     </p>
                 </section>
             ) : (

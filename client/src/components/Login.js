@@ -3,7 +3,7 @@ import useAuth from '../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 import axios from '../api/axios';
-const LOGIN_URL = '/users/sign_in';
+const LOGIN_URL = '/login';
 
 const Login = () => {
     const { setAuth, persist, setPersist } = useAuth();
@@ -29,8 +29,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-//user3@example.com
-//http://localhost:3002/users/sign_in
+
         try {
             const response = await axios.post(LOGIN_URL,
                 JSON.stringify({user:{ email: user, password: pwd }}),
@@ -41,12 +40,12 @@ const Login = () => {
                     // withCredentials: true
                 }
             );
-            console.log(JSON.stringify(response?.data));
-            console.log(JSON.stringify(response?.headers?.getAuthorization()));
+
             const bearerToken = JSON.stringify(response?.headers?.getAuthorization());
             const accessToken = bearerToken.split(' ')[1];
-            console.log(accessToken);
-            // const roles = response?.data?.roles;
+
+            localStorage.setItem("token",accessToken)
+
             const roles = [2001]
             console.log(roles);
             setAuth({ user, pwd, roles, accessToken });

@@ -18,15 +18,11 @@ class Users::SessionsController < Devise::SessionsController
     end
   end
 
-  def destroy
-    @authenticated = true
-    super
-  end
 
   private
 
   def invalid_login_attempt
-    render json: { messages: ['Invalid Email or Password.'] }, status: :unprocessable_entity
+    render json: { messages: ['Invalid Email or Password 1.'] }, status: :unprocessable_entity
   end
 
   def verify_signed_out_user
@@ -34,14 +30,9 @@ class Users::SessionsController < Devise::SessionsController
     super
   end
 
+
   def respond_to_on_destroy
-    if @authenticated && current_user.nil?
-      # current_user is logged out successfully
-      render status: :ok
-    else
-      # current_user is not logged out successfully
-      render status: :unprocessable_entity
-    end
+    head :no_content
   end
 
   def respond_with(resource, _opts = {})
@@ -55,8 +46,10 @@ class Users::SessionsController < Devise::SessionsController
     else
       # current_user is not logged in successfully
       render json: {
-        messages: ["Invalid Email or Password."],
+        messages: ["Invalid Email or Password 2."],
       }, status: :unprocessable_entity
     end
   end
+
+
 end
