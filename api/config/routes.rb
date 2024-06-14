@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   # devise_for :users, controllers: {
   #   sessions: "users/sessions",
   #   registrations: "users/registrations"
@@ -21,8 +22,22 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :books
+      namespace :players do
+        resources :offers, only: [:index] do
+          collection do
+            patch :edit
+            patch :claim
+          end
+        end
+        resource :profiles, only: %i[edit update]
+        resource :offers, only: [:index] do
+          member do
+            post :claim, to: 'offers#claim'
+          end
+        end
+      end
     end
+
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
