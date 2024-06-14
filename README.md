@@ -1,32 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+    - 3.2.1
 
-* System dependencies
+* React version
+    - 18
 
 * Configuration
+    - docker desktop with WSL2 on windows 11
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
- ## sources
- Docker
- https://medium.com/@chris.lty07/dockerize-an-existing-react-rails-and-postgres-application-bba3d9d6b24c# influenceMobile
-
-# influenceMobile
+# Installation
 
 For windows user with WSL
 
@@ -34,10 +18,55 @@ For windows user with WSL
 cp docker-compose-windows.override.yml docker-compose.override.yml
 ```
 
-API
+Build project
+```bash
+docker compose build
+```
+
+Start project
+```bash
+docker compose up
+```
+
+### Database
+- creation
+    ```bash
+    docker compose run --rm api rails db:create
+    ```
+
+* migration
+    ```bash
+    docker compose run --rm api rails db:migrate
+    ```
+
+* seeds
+    ```bash
+    docker compose run --rm api rails db:seed
+    ```
+
+* tests
+
+    Run the migration before
+    ```bash
+    docker compose run --rm api rails db:migrate RAILS_ENV=test
+    ```
+    Run test
+    ```bash
+    docker compose run --rm api rails spec
+    ```
+
+## Project links
+
+#### API
+
+http://localhost:3002/
+
+#### Client
 
 http://localhost:3000/
 
-Client
+## Rubocop
+```bash
+docker compose run --rm api rubocop --color -E --format clang --parallel
+```
 
-http://localhost:3000/
