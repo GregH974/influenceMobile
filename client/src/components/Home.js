@@ -16,19 +16,20 @@ const Home = () => {
             <br />
             <p>You are logged in!</p>
             <br />
-            <Link to="/editor">Go to the Editor page</Link>
+            {/* <Link to="/editor">Go to the Editor page</Link>
             <br />
             <Link to="/admin">Go to the Admin page</Link>
             <br />
             <Link to="/lounge">Go to the Lounge</Link>
-            <br />
+            <br /> */}
             <Link to="/linkpage">Go to the link page</Link>
+            <Link to="/aboutpage">About</Link>
             <br />
             <Link to="#">My profile</Link>
             <br />
             <Link to="#">My claims</Link>
             <br />
-            <Link to="#">Offers</Link>
+            <Link to="/offer">Offers</Link>
             <br />
             <div className="flexGrow">
                 <button onClick={signOut}>Sign Out</button>
