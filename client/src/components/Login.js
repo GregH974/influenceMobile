@@ -48,7 +48,7 @@ const Login = () => {
             // TODO : for the purpose I force but I must read
             // the content of date with role: "player"
             const roles = [2001]
-            console.log(roles);
+
             setAuth({ user, pwd, roles, accessToken });
             setUser('');
             setPwd('');

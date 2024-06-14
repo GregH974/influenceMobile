@@ -28,7 +28,7 @@ body {
 
 section {
     width: 100%;
-    min-width: 420px;
+    max-width: 420px;
     min-height: 400px;
     display: flex;
     flex-direction: column;

@@ -7,7 +7,7 @@ const Home = () => {
 
     const signOut = async () => {
         await logout();
-        navigate('/linkpage');
+        navigate('/');
     }
 
     return (
@@ -16,18 +16,9 @@ const Home = () => {
             <br />
             <p>You are logged in!</p>
             <br />
-            {/* <Link to="/editor">Go to the Editor page</Link>
+            <Link to="/">Home</Link>
             <br />
-            <Link to="/admin">Go to the Admin page</Link>
-            <br />
-            <Link to="/lounge">Go to the Lounge</Link>
-            <br /> */}
-            <Link to="/linkpage">Go to the link page</Link>
             <Link to="/aboutpage">About</Link>
-            <br />
-            <Link to="#">My profile</Link>
-            <br />
-            <Link to="#">My claims</Link>
             <br />
             <Link to="/offer">Offers</Link>
             <br />

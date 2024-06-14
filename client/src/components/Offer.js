@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import axios from '../api/axios';
 import { useEffect, useState } from "react";
+import ClaimButton from "./ClaimButton";
+
 const OFFER_URL = '/api/v1/players/offers';
 
 const Offer = () => {
@@ -29,7 +31,10 @@ const Offer = () => {
         fetchOffers();
     }, []);
 
-
+    const handleSuccess = () => {
+        // Refresh the page by re-fetching the offers
+        window.location.reload();
+    };
 
     return (
         <section className="offer-list">
@@ -50,6 +55,12 @@ const Offer = () => {
                         <p>Title: {offer.title}</p>
                         <p>Description: {offer.description}</p>
                         <p>Score to Achieve: {offer.score_to_achieve}</p>
+                        <ClaimButton
+                            offerId={offer.id}
+                            scoreToAchieve={offer.score_to_achieve}
+                            totalScore={totalScore}
+                            onSuccess={handleSuccess}
+                         />
                     </li>
                     ))}
                 </ul>
