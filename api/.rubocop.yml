@@ -1,0 +1,327 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - '**/vendor/**/*'
+    - '**/vendor/**/.*'
+    - '**/node_modules/**/*'
+    - bin/*
+    - db/*schema.rb
+    - log/**/*
+    - public/**/*
+    - storage/**/*
+    - tmp/**/*
+# Prefer &&/|| over and/or.
+Style/AndOr:
+  Enabled: true
+# Align `when` with `case`.
+Layout/CaseIndentation:
+  Enabled: true
+
+# Align comments with method definitions.
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/ElseAlignment:
+  Enabled: true
+
+# Align `end` with the matching keyword or starting expression except for
+# assignments, where it should be aligned with the LHS.
+Layout/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+  AutoCorrect: true
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+# In a regular class definition, no empty lines around the body.
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+# In a regular method definition, no empty lines around the body.
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+# In a regular module definition, no empty lines around the body.
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+Layout/FirstArgumentIndentation:
+  Enabled: true
+
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
+  Enabled: true
+
+# Method definitions after `private` or `protected` isolated calls need one
+# extra level of indentation.
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: indented_internal_methods
+
+# Two spaces, no tabs (for indentation).
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+  AllowForAlignment: false
+
+Layout/SpaceBeforeComma:
+    Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+    Enabled: true
+
+Style/DefWithParentheses:
+  Enabled: true
+
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Use `foo {}` not `foo{}`.
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+# Use `foo { bar }` not `foo {bar}`.
+Layout/SpaceInsideBlockBraces:
+  Enabled: false
+
+# Use `{ a: 1 }` not `{a:1}`.
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+Layout/SpaceInsideParens:
+  Enabled: true
+
+# Check quotes usage according to lint rule below.
+Style/StringLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+# Detect hard tabs, no hard tabs.
+Layout/IndentationStyle:
+  Enabled: true
+
+# Blank lines should not have any spaces.
+Layout/TrailingEmptyLines:
+  Enabled: true
+
+# No trailing whitespace.
+Layout/TrailingWhitespace:
+  Enabled: true
+
+# Use quotes for string literals when they are enough.
+Style/RedundantPercentQ:
+  Enabled: true
+
+# Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
+Lint/RequireParentheses:
+  Enabled: true
+
+Lint/RedundantStringCoercion:
+  Enabled: true
+
+Style/RedundantReturn:
+  Enabled: false
+  AllowMultipleReturnValues: true
+
+Style/Semicolon:
+  Enabled: true
+  AllowAsExpressionSeparator: true
+
+# Prefer Foo.method over Foo::method
+Style/ColonMethodCall:
+  Enabled: true
+
+
+# RUBOCOP PERFORMANCE
+# https://github.com/rubocop/rubocop-performance/blob/master/config/default.yml
+Performance:
+  Enabled: true
+  # DisabledByDefault: true
+
+Performance/BindCall:
+  Enabled: true
+
+Performance/BlockGivenWithExplicitBlock:
+  Enabled: true
+
+Performance/Caller:
+  Enabled: true
+
+Performance/Casecmp:
+  Enabled: true
+
+Performance/CollectionLiteralInLoop:
+  Enabled: true
+  MinSize: 1
+
+Performance/CompareWithBlock:
+  Enabled: true
+
+Performance/DeletePrefix:
+  Enabled: true
+
+Performance/DeleteSuffix:
+  Enabled: true
+
+Performance/DoubleStartEndWith:
+  Enabled: true
+  IncludeActiveSupportAliases: false
+
+Performance/FixedSize:
+  Enabled: true
+
+Performance/InefficientHashSearch:
+  Enabled: true
+
+Performance/IoReadlines:
+  Enabled: true
+
+Performance/MapCompact:
+  Enabled: true
+
+Performance/MethodObjectAsBlock:
+  Enabled: true
+
+Performance/RangeInclude:
+  Enabled: true
+
+Performance/RedundantBlockCall:
+  Enabled: true
+
+Performance/RedundantEqualityComparisonBlock:
+  Enabled: true
+
+Performance/RedundantMatch:
+  Enabled: true
+
+Performance/RedundantMerge:
+  Enabled: true
+  MaxKeyValuePairs: 2
+
+Performance/RedundantSortBlock:
+  Enabled: true
+
+Performance/RedundantSplitRegexpArgument:
+  Enabled: true
+
+Performance/RedundantStringChars:
+  Enabled: true
+
+Performance/RegexpMatch:
+  Enabled: true
+
+Performance/ReverseEach:
+  Enabled: true
+
+Performance/ReverseFirst:
+  Enabled: true
+
+Performance/Size:
+  Enabled: true
+
+Performance/SortReverse:
+  Enabled: true
+
+Performance/Squeeze:
+  Enabled: true
+
+Performance/StringInclude:
+  Enabled: true
+
+Performance/StringReplacement:
+  Enabled: true
+
+Performance/Sum:
+  Enabled: true
+  OnlySumOrWithInitialValue: false
+
+Performance/TimesMap:
+  Enabled: true
+
+Performance/UnfreezeString:
+  Enabled: true
+
+Performance/UriDefaultParser:
+  Enabled: true
+
+Performance/Count:
+  Enabled: false
+
+Performance/MapMethodChain: # new in 1.19
+  Enabled: true
+
+Rails/ActionControllerFlashBeforeRender:
+  Enabled: false
+Rails/ActiveSupportOnLoad:
+  Enabled: false
+Rails/FreezeTime:
+  Enabled: false
+Rails/TopLevelHashWithIndifferentAccess:
+  Enabled: false
+Rails/WhereMissing:
+  Enabled: false
+Rails/UnknownEnv:
+  Enabled: false
+Rails/NegateInclude:
+  Enabled: false
+Rails/ApplicationRecord:
+  Enabled: false
+Rails/RakeEnvironment:
+  Enabled: false
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+Rails/EnumHash:
+  Enabled: false
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+Rails/NotNullColumn:
+  Enabled: false
+Rails/Output:
+  Enabled: false
+Rails/OutputSafety:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
+Rails/UniqBeforePluck:
+  Enabled: false
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+Rails/ActionOrder: # new in 2.17
+  Enabled: false
+Rails/IgnoredColumnsAssignment: # new in 2.17
+  Enabled: false
+Rails/WhereNotWithMultipleConditions: # new in 2.17
+  Enabled: false
