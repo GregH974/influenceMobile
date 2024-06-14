@@ -142,3 +142,32 @@ li {
     width: 20px;
     margin: 0 5px 2px 2px;
 }
+/* section offers */
+.offer-list {
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+li p {
+    margin: 5px 0;
+    word-wrap: break-word; /* Ensures text wraps properly in responsive design */
+}
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+    li {
+        padding: 10px;
+    }
+}

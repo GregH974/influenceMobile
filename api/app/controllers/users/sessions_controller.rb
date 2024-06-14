@@ -4,6 +4,8 @@ class Users::SessionsController < Devise::SessionsController
   respond_to :json
 
   def new
+    puts "============== sign_in_params"
+    puts sign_in_params.inspect
     user = User.find_for_database_authentication(email: sign_in_params[:email])
     return invalid_login_attempt unless user
 
