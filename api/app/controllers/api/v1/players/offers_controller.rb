@@ -56,7 +56,7 @@ class Api::V1::Players::OffersController < Api::V1::Players::BaseController
   private
 
     def claim_params
-      params.require(:format)
+      params.require(:offer_id)
     end
 
     def find_offer
